@@ -1,6 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
+
 import { AppComponent } from './app.component';
+import path from './util/Path';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -14,16 +17,28 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('dice number should be between 0 and 7', () => {
+
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    
+    expect(app.generateNumber()).toBeLessThan(7);
+    expect(app.generateNumber()).toBeGreaterThan(0);
+    
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('my-app app is running!');
-  });
+  it('check number of nodes till end',()=>{
+    let temp = path;
+    let count = 0;
+    while(temp){
+      temp = temp.next;
+      count+=1
+    }
+    expect(count).toEqual(51);
+  })
+
+  
+
+  
+ 
 });

@@ -4,7 +4,7 @@ export default class Player {
     y:number;
     final:Array<number>;
     head:any;
-    count:number =0;
+    count:number = 0;
 
 
     

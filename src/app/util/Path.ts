@@ -79,11 +79,11 @@ temp = temp2;
     
 }
 
-temp2 = new Node([8,0]);
+temp2 = new Node([7,0]);
 temp.next = temp2;
 temp = temp2;
 
-temp2 = new Node([7,0]);
+temp2 = new Node([6,0]);
 temp.next = temp2;
 temp = temp2;
 
